@@ -2,7 +2,6 @@
 
 var Track = function (name, roll) {
   this.name = name;
-  this.roll = roll;
 };
 
 Track.prototype.startRecording = function() {
@@ -23,5 +22,18 @@ Track.prototype.removeNotes = function(note) {
 Track.prototype.stopRecording = function () {
   this.addNotes([]);
 };
+
+// Track.__onDispatch = function(payload){
+//
+//   switch(payload.actionType){
+//     case 'START_RECORDING':
+//       var note = payload.note;
+//       break;
+//     case 'STOP_RECORDING':
+//       note = payload.note;
+//       break;
+//   }
+//
+// };
 
 module.exports = Track;

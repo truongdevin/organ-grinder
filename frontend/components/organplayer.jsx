@@ -1,6 +1,8 @@
 var React = require('react');
 var KeyStore = require('../stores/keystore');
 var OrganKey = require('./organkey');
+var Recorder = require('./recorder');
+
 var ALLKEYS = [
   "C4",
   "Cs4",
@@ -46,13 +48,16 @@ var OrganPlayer = React.createClass({
     this.state.whiteKeys.forEach(function(key){
       wKeys.push(<OrganKey note={key} key={key}/>);
     });
-    return ( <div>
+    return (
+      <div>
       <ul className="black-keys">
       {bKeys}
     </ul>
     <ul className="white-keys">
       {wKeys}
-    </ul> </div> );
+    </ul>
+    <Recorder/> 
+  </div> );
   }
 });
 
